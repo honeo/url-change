@@ -16,7 +16,7 @@ $ npm i url-change
 import 'url-change';
 
 // or dynamic-import, CDN
-await import('https://rawgit.com/honeo/url-change/master/index.min.mjs');
+await import('https://cdn.rawgit.com/honeo/url-change/master/index.min.mjs');
 ```
 ```js
 window.addEventListener('urlchange', (e)=>{
@@ -27,7 +27,6 @@ window.addEventListener('urlchange', (e)=>{
 	);
 });
 
-// or
-
+// or only WebPageContext
 window.onurlchange = function(e){...}
 ```
