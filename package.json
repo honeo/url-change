@@ -1,0 +1,32 @@
+{
+  "name": "url-change",
+  "version": "0.0.1",
+  "description": "URL変更イベントの実装",
+  "main": "index.mjs",
+  "scripts": {
+    "up": "node dev.js && npm publish",
+    "test": "npm update && cd ./test && node index.js"
+  },
+  "author": "honeo",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/honeo/url-change.git"
+  },
+  "keywords": [
+    "event",
+    "url",
+    "change"
+  ],
+  "bugs": {
+    "url": "https://github.com/honeo/url-change/issues"
+  },
+  "homepage": "https://github.com/honeo/url-change#readme",
+  "devDependencies": {
+    "uglify-es": "^3.3.9"
+  },
+  "dependencies": {}
+}
