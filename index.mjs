@@ -1,7 +1,6 @@
 // isolated world脱出
 const scriptElement = document.createElement('script');
 scriptElement.text = `(function(){
-	${URLChangeEvent}
 	(${isolate})();
 }());`;
 document.head.append(scriptElement);

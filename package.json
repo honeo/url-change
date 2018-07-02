@@ -4,7 +4,6 @@
   "description": "URL変更イベントの実装",
   "main": "index.mjs",
   "scripts": {
-    "up": "node dev.js && npm publish",
     "test": "npm update && cd ./test && node index.js"
   },
   "author": "honeo",
