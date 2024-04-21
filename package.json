@@ -23,9 +23,5 @@
   "bugs": {
     "url": "https://github.com/honeo/url-change/issues"
   },
-  "homepage": "https://github.com/honeo/url-change#readme",
-  "devDependencies": {
-    "uglify-es": "^3.3.9"
-  },
-  "dependencies": {}
+  "homepage": "https://github.com/honeo/url-change#readme"
 }

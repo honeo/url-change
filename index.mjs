@@ -7,7 +7,10 @@ document.head.append(scriptElement);
 scriptElement.remove();
 
 
-// 本体、ページコンテキストで実行される
+/*
+	Webページのコンテキストで実行される
+		引数・返り値なし
+*/
 function isolate(){
 
 	class URLChangeEvent extends HashChangeEvent{
@@ -16,25 +19,38 @@ function isolate(){
 		}
 	}
 
-	const pushState_native = window.history.pushState;
-	let url_cache = location.href;
+	const func_nativePushState = window.history.pushState;
+	const func_nativeReplaceState = window.history.replaceState;
+
+	let str_urlCache = location.href;
 
 	window.history.pushState = function(...args){
-		pushState_native(...args);
+		func_nativePushState(...args);
+		onChange();
+	}
+	window.history.replaceState = function(...args){
+		func_nativeReplaceState(...args);
 		onChange();
 	}
 
 	window.addEventListener('hashchange', onChange);
 
+	/*
+		引数（未使用）
+			pushState()から誘発時: なし
+			hashchangeイベントから誘発時： eventインスタンス
+		返り値
+			なし
+	*/
 	function onChange(e){
-		if( location.href!==url_cache ){
+		if( location.href!==str_urlCache ){
 			const event = new URLChangeEvent('urlchange', {
-				oldURL: url_cache,
+				oldURL: str_urlCache,
 				newURL: location.href
 			});
 			window.dispatchEvent(event);
 			typeof window.onurlchange==='function' && window.onurlchange(event);
-			url_cache = location.href;
+			str_urlCache = location.href;
 		}
 	}
 
