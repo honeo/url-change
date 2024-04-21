@@ -26,8 +26,19 @@ window.addEventListener('urlchange', (e)=>{
 	);
 });
 
-// or only WebPageContext
+// only WebPageContext
 window.onurlchange = function(e){...}
+```
+```js
+// or hash|href|password|pathname|search|username
+window.addEventListener('urlchange-hash', (e)=>{
+	console.log(
+		e.type, // "urlchange-hash"
+		e.oldURL, // "#foo"
+		e.newURL // "#bar"
+	);
+});
+window.onurlchangehash = function(e){...}
 ```
 
 
@@ -37,8 +48,8 @@ window.onurlchange = function(e){...}
 1. history.pushState|replaceState()の実行時
 2. 標準のhashchangeイベント発火時
 
-### ブラウザ拡張機能（ContentScripts）でも動作する
-Isolated world突破により、ChromeExtensionsまたはWebExtensionsのContentScriptsでも動作する。
+### ContentScripts対応
+ブラウザ拡張機能(ChromeExtensions, WebExtensions)のContentScriptsでも動作する。
 
 #### 既知の問題
 ContentScriptsから利用時、渡されるEventインスタンス名がHashChangeEventになる。
