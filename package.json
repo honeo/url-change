@@ -1,6 +1,6 @@
 {
   "name": "url-change",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "URL変更イベントの実装",
   "main": "index.mjs",
   "scripts": {
